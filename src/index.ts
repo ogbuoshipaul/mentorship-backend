@@ -12,9 +12,13 @@ import testRoutes from './routes/test.route';
 const app = express();
 
 app.use(cors({
-  origin: 'http://localhost:5173', // ✅ allow Vite dev server
+  origin: [
+    'http://localhost:5173', // for local dev
+    'https://your-frontend-domain.onrender.com' // 🔁 replace with actual frontend domain
+  ],
   credentials: true,
 }));
+
 
 app.use(express.json());
 
